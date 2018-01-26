@@ -88,19 +88,19 @@ namespace MailSend
         /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    infoList.ForEach(x =>
-            //    {
-            //        EmailHelper.SendMail(x, textBox2.Text.Trim(), "", "", richTextBox2.Text, textBox3.Text);
-            //    });
-            //    MessageBox.Show("发送完成");
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-            EmailHelper.SendMail("youasworld@sina.com", "cms@bism.cn", "", "", "验证码为:144265", "【车辆管理系统】密码修改");
+            try
+            {
+                infoList.ForEach(x =>
+                {
+                    EmailHelper.SendMail(x, textBox2.Text.Trim(), "", "", richTextBox2.Text, textBox3.Text);
+                });
+                MessageBox.Show("发送完成");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            //EmailHelper.SendMail("youasworld@sina.com", "cms@bism.cn", "", "", "验证码为:144265", "【车辆管理系统】密码修改");
         }
     }
 }
